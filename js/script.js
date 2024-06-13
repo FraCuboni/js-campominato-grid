@@ -15,16 +15,24 @@ const smileButton = document.querySelector('.smile');
 // creo il container per i bottoni premibili 
 const boxGame = document.querySelector('.box-game');
 
+// creo la costante bottone cliccabile
+
 smileButton.addEventListener('click',
     function(){
         boxGame.innerHTML='';
-        for(i=1; i<=100; i++){
+        for(let i=1; i<=100; i++){
             // genero le caselle    
             let square= document.createElement('div');
             square.classList.add('square');
             square.textContent= i;
             // le aggiungo a boxGame
             boxGame.appendChild(square);
+            square.addEventListener('click',
+                function(){
+                    square.classList.add('clicked');
+                    console.log(i);
+                }
+            );
     }
 });
 
