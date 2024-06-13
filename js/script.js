@@ -15,27 +15,14 @@ const smileButton = document.querySelector('.smile');
 // creo il container per i bottoni premibili 
 const boxGame = document.querySelector('.box-game');
 
-// creo la costante bottone cliccabile
+let square = 'square';
 
-// smileButton.addEventListener('click',
-//     function(){
-//         boxGame.innerHTML='';
-//         for(let i=1; i<=100; i++){
-//             // genero le caselle    
-//             let square= document.createElement('div');
-//             square.classList.add('square');
-//             square.textContent= i;
-//             // le aggiungo a boxGame
-//             boxGame.appendChild(square);
-//             square.addEventListener('click',
-//                 function(){
-//                     square.classList.add('clicked');
-//                     console.log(i);
-//                 }
-//             );
-//     }
-// });
+// funzione per creare grid e aggiungere la classe
+smileButton.addEventListener('click',
+    function(){
+        boxGame.innerHTML='';
+        generateGrid(100, boxGame, square)
+    }
+)
 
-generateGrid(100,boxGame);
 
-// ad ogni clic su una casella agginugo la classe .clicked
